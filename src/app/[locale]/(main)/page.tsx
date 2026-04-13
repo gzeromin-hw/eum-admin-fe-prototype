@@ -1,8 +1,47 @@
 'use client'
 
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import { graphSchemaClient } from '@/service/api/graph-schema.client'
 import { GraphSchemaDto } from '@/service/dtos/graph-schema.dto'
+
+const MOCK_SCHEMAS: { schemas: GraphSchemaDto[]; total: number } = {
+  schemas: [
+    {
+      id: 1,
+      domain: 'shipbuilding_block_production',
+      version: '1.0',
+      description:
+        '조선소 블록 생산 계획 관리 초기 스키마.\nNeo4j 온톨로지 기반으로 월간 조립 계획과 기준 계획 중심의 기본 구조를 정의한다.\n실적·이슈 관리는 포함하지 않는다.',
+      source_format: 'yaml',
+      is_active: false,
+      created_at: '2026-04-10T07:18:04.266794',
+      updated_at: '2026-04-10T07:18:04.266794',
+    },
+    {
+      id: 2,
+      domain: 'shipbuilding_block_production',
+      version: '1.2',
+      description:
+        '조선소 블록 생산 계획/실적·이슈 관리 스키마 (v1.2).\nv1.0 대비 WorkStageActual, BlockProcessPlan/Actual, Issue, Cause, Action, Team 추가.',
+      source_format: 'yaml',
+      is_active: false,
+      created_at: '2026-04-10T07:18:04.266794',
+      updated_at: '2026-04-10T07:18:04.266794',
+    },
+    {
+      id: 3,
+      domain: 'shipbuilding_block_production',
+      version: '1.3',
+      description:
+        '조선소 블록 생산 계획/실적 관리 확장 스키마 (v1.3).\nv1.2의 이슈 관리에 더해 해외(OOS) 공장, 블록 공정 마스터,\n크리티컬패스, 원가 그룹, 조직 관리까지 포괄하는 완전판 스키마.',
+      source_format: 'yaml',
+      is_active: true,
+      created_at: '2026-04-10T07:18:04.266794',
+      updated_at: '2026-04-10T07:18:04.266794',
+    },
+  ],
+  total: 3,
+}
 import {
   DatabaseIcon,
   CalendarIcon,
@@ -268,20 +307,18 @@ function ImportYamlModal({
 }
 
 export default function MainPage() {
-  const queryClient = useQueryClient()
   const [isImportOpen, setIsImportOpen] = useState(false)
 
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ['graph-schemas'],
-    queryFn: () => graphSchemaClient.getAllSchemas(),
-  })
+  const data = MOCK_SCHEMAS
+  const isLoading = false
+  const isError = false
 
   return (
     <div className="p-6">
       {isImportOpen && (
         <ImportYamlModal
           onClose={() => setIsImportOpen(false)}
-          onSuccess={() => queryClient.invalidateQueries({ queryKey: ['graph-schemas'] })}
+          onSuccess={() => {}}
         />
       )}
 
