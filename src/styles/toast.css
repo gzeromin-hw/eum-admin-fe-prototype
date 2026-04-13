@@ -1,0 +1,166 @@
+:root {
+  --toastify-toast-width: 25rem;
+  --toastify-toast-min-height: 4.625rem;
+  --toastify-toast-bd-radius: 0;
+  --toastify-toast-padding: 0.9375rem 1.125rem;
+  --toastify-toast-background: var(--modal-background-normal);
+  --toastify-toast-shadow:
+    0px 8px 10px 0px rgba(51, 51, 51, 0.1),
+    0px 6px 30px 0px rgba(51, 51, 51, 0.06),
+    0px 16px 24px 0px rgba(51, 51, 51, 0.07);
+  --toastify-text-color-light: var(--neutral);
+  --toastify-text-color-dark: var(--neutral);
+  --toastify-font-family: var(--font-sans, Pretendard);
+  --toastify-z-index: 9999;
+  --toastify-toast-offset: 16px;
+  --toastify-toast-top: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-top)
+  );
+  --toastify-toast-right: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-right)
+  );
+  --toastify-toast-left: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-left)
+  );
+  --toastify-toast-bottom: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-bottom)
+  );
+}
+
+/* Toast Container */
+.Toastify__toast-container {
+  width: 25rem !important;
+  top: 85px !important;
+  padding: 0 1rem !important;
+}
+
+/* Individual Toast */
+.Toastify__toast {
+  background: var(--modal-background-normal) !important;
+  border-radius: 0 !important;
+  box-shadow:
+    0px 8px 10px 0px rgba(51, 51, 51, 0.1),
+    0px 6px 30px 0px rgba(51, 51, 51, 0.06),
+    0px 16px 24px 0px rgba(51, 51, 51, 0.07) !important;
+  padding: 0.9375rem 1.125rem !important;
+  margin-bottom: 0.5rem !important;
+  min-height: 4.625rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  color: var(--neutral) !important;
+}
+
+/* Toast Body */
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--neutral) !important;
+  font-family: var(--font-sans, Pretendard) !important;
+  white-space: pre-line !important;
+}
+
+/* Content Layout */
+.Toastify__toast-body > div {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.75rem !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  position: relative !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Force gap for all toast content */
+.Toastify__toast-container .Toastify__toast .Toastify__toast-body > div {
+  gap: 0.75rem !important;
+}
+
+/* Icon Container */
+.Toastify__toast-icon {
+  margin-right: 0.75rem !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+}
+
+/* Icon Image */
+.Toastify__toast-icon img {
+  width: 2rem !important;
+  height: 2rem !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Text Content Container */
+.toast-message-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.125rem !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  flex: 1 !important;
+  position: relative !important;
+}
+
+/* Title Text */
+.toast-title {
+  color: var(--neutral) !important;
+  text-align: left !important;
+  font-family: var(--font-sans, Pretendard) !important;
+  font-size: 1rem !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 140% !important;
+  position: relative !important;
+  align-self: stretch !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Subtitle Text */
+.toast-subtitle {
+  color: var(--alternative) !important;
+  text-align: left !important;
+  font-family: var(--font-sans, Pretendard) !important;
+  font-size: 0.875rem !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 140% !important;
+  position: relative !important;
+  align-self: stretch !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Progress Bar */
+.Toastify__progress-bar {
+  height: 4px !important;
+  background: var(--neutral) !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Close Button */
+.Toastify__close-button {
+  display: none !important;
+}

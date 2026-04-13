@@ -1,0 +1,39 @@
+/* input에 투명 배경 적용 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-internal-autofill-selected {
+  appearance: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+}
+
+/* 다크 모드에서도 동일하게 적용 */
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark input:-internal-autofill-selected {
+  appearance: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+}

@@ -1,0 +1,297 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+@import '../styles/variables.css';
+@import '../styles/input-autofill.css';
+@import '../styles/scrollbar.css';
+@import 'highlight.js/styles/atom-one-dark.css';
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+/* rem 배율 정의: base 레이어에서 잡아주기 */
+@layer base {
+  /* 일반 */
+  @media (-webkit-min-device-pixel-ratio: 1) {
+    :root {
+      font-size: 16px;
+    }
+  }
+
+  /* 레티나 디스플레이(Mac)  */
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    :root {
+      font-size: 15px;
+    }
+  }
+
+  /* 초고해상도 모바일/모니터  */
+  @media (-webkit-min-device-pixel-ratio: 3) {
+    :root {
+      font-size: 14px;
+    }
+  }
+}
+
+@theme {
+  /* Base Theme Variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Pretendard', sans-serif;
+  --font-mono: 'Pretendard', monospace;
+
+  /* Custom Font Sizes */
+  --font-size-xxs: 0.6875rem;
+  --font-size-md: 0.9375rem;
+
+  /* Color System */
+  --color-common-0: var(--common-0);
+  --color-common-100: var(--common-100);
+
+  --color-error: var(--error);
+  --color-danger: var(--danger);
+  --color-danger-strong: var(--danger-strong);
+  --color-danger-assistive: var(--danger-assistive);
+
+  /* Orange Colors */
+  --color-orange-300: var(--orange-300);
+  --color-orange-400: var(--orange-400);
+  --color-orange-500: var(--orange-500);
+  --color-orange-600: var(--orange-600);
+  --color-orange-700: var(--orange-700);
+
+  /* Gray Colors */
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-150: var(--gray-150);
+  --color-gray-200: var(--gray-200);
+  --color-gray-250: var(--gray-250);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-450: var(--gray-450);
+  --color-gray-500: var(--gray-500);
+  --color-gray-550: var(--gray-550);
+  --color-gray-600: var(--gray-600);
+  --color-gray-650: var(--gray-650);
+  --color-gray-700: var(--gray-700);
+  --color-gray-750: var(--gray-750);
+  --color-gray-800: var(--gray-800);
+
+  /* Primary Color System */
+  --color-primary-normal: var(--primary-normal);
+  --color-primary-neutral: var(--primary-neutral);
+  --color-primary-assistive: var(--primary-assistive);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-heavy: var(--primary-heavy);
+
+  /* Background Color System */
+  --color-background-normal: var(--background-normal);
+  --color-background-neutral: var(--background-neutral);
+  --color-background-alternative: var(--background-alternative);
+  --color-background-assistive: var(--background-assistive);
+
+  --color-background-default: var(--background-default);
+
+  /* Text Color System */
+  --color-strong: var(--strong);
+  --color-normal: var(--normal);
+  --color-neutral: var(--neutral);
+  --color-alternative: var(--alternative);
+  --color-assistive: var(--assistive);
+  --color-disable: var(--disable);
+
+  /* Icon Color System */
+  --color-icon-normal: var(--icon-normal);
+  --color-icon-neutral: var(--icon-neutral);
+  --color-icon-disable: var(--icon-disable);
+  --color-icon-assistive: var(--icon-assistive);
+
+  /* Line Color System */
+  --color-line-normal: var(--line-normal);
+  --color-line-neutral: var(--line-neutral);
+  --color-line-alternative: var(--line-alternative);
+  --color-line-assistive: var(--line-assistive);
+
+  /* Modal Color System */
+  --color-modal-line-normal: var(--modal-line-normal);
+  --color-modal-line-alternative: var(--modal-line-alternative);
+  --color-modal-icon-normal: var(--modal-icon-normal);
+  --color-modal-background-normal: var(--modal-background-normal);
+  --color-modal-background-alternative: var(--modal-background-alternative);
+  --color-modal-background-assistive: var(--modal-background-assistive);
+  --color-modal-background-neutral: var(--modal-background-neutral);
+
+  /* Dropdown Color System */
+  --color-dropdown-background-normal: var(--dropdown-background-normal);
+  --color-dropdown-background-alternative: var(
+    --dropdown-background-alternative
+  );
+
+  /* Interaction Color System */
+  --color-interaction-background-active: var(--interaction-background-active);
+  --color-interaction-text-active: var(--interaction-text-active);
+  --color-interaction-text-inactive: var(--interaction-text-inactive);
+
+  /* Card Color System */
+  --color-card-icon-normal: var(--card-icon-normal);
+  --color-card-assistive: var(--card-assistive);
+  --color-card-text-assistive: var(--card-text-assistive);
+  /* Slider Color System */
+  --color-slider-line-normal: var(--slider-line-normal);
+  --color-slider-background-normal: var(--slider-background-normal);
+
+  --color-table-alternative: var(--table-alternative);
+
+  --color-context-background-normal: var(--context-background-normal);
+  --color-context-background-alternative: var(--context-background-alternative);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    'Pretendard',
+    -apple-system,
+    'Malgun Gothic',
+    'Noto Sans KR',
+    sans-serif;
+  font-feature-settings: 'tnum' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 입력 필드는 선택 가능하도록 허용 */
+input,
+textarea,
+[contenteditable] {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* 모바일 입력 필드 포커스 시 줌 방지 */
+@media screen and (max-width: 768px) {
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  textarea {
+    font-size: 16px !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* 테마 전환 시 부드러운 애니메이션을 위한 추가 스타일 */
+.dark img[class*='dark:invert'],
+.dark svg[class*='dark:invert'] {
+  filter: invert(1);
+}
+/* 이미지와 아이콘의 부드러운 전환 */
+img,
+svg,
+.icon {
+  transition:
+    filter 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility text-xxs {
+  font-size: var(--font-size-xxs);
+  line-height: '140%';
+}
+@utility text-md {
+  font-size: var(--font-size-md);
+  line-height: '140%';
+}
+
+/* CSS Loaders 스타일 로딩 애니메이션 */
+@keyframes loadingDots {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* 스트리밍 로더 스타일 */
+.streaming-loader {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: conic-gradient(
+    from 90deg,
+    rgba(255, 237, 213, 1) 0deg,
+    rgba(255, 255, 255, 1) 14.49deg,
+    rgba(234, 88, 12, 1) 108.75deg,
+    rgba(194, 65, 12, 1) 190.385deg,
+    rgba(249, 115, 22, 1) 280.385deg,
+    rgba(255, 237, 213, 1) 360deg
+  );
+  mask: radial-gradient(circle, transparent 60%, black 60%);
+  -webkit-mask: radial-gradient(circle, transparent 60%, black 60%);
+  animation: streamingRotate 1s linear infinite;
+}
+
+@keyframes streamingRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 스트리밍 텍스트 그라데이션 애니메이션 */
+.streaming-text {
+  background: linear-gradient(90deg, #a6a9b2 0%, #47484c 57.69%, #a6a9b2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes streamingTextGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmer 텍스트 효과 */
+.shimmer-text {
+  background: linear-gradient(90deg, #ffffff, #c4c4c4, #ffffff);
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

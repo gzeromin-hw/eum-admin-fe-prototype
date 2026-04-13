@@ -1,0 +1,3600 @@
+{
+  "result": {
+    "status": "success",
+    "nodeCount": 56,
+    "relCount": 156,
+    "totalNodeCount": 56,
+    "totalRelCount": 156,
+    "capped": false
+  },
+  "data": [
+    {
+      "sourceId": 7795832,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053183,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795832,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283431,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795832,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179959,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795831,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCP9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053182,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795831,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCP9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283430,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795831,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCP9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179958,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795830,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCG9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053181,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795830,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCG9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283429,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795830,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCG9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179957,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795829,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053180,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795829,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283428,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795829,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179956,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795828,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053179,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795828,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283427,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795828,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCE2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179955,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795827,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053178,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795827,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283426,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795827,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179954,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795826,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053177,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795826,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283425,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795826,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "11.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179953,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795825,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "23.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053176,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795825,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "23.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283424,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795825,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "23.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179952,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795824,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_P9H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053175,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795824,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_P9H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283423,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795824,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_P9H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179951,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795823,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "166.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M7H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053174,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795823,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "166.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M7H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283422,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795823,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "166.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M7H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179950,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795822,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "36.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053173,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795822,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "36.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283421,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795822,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "36.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_M5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179949,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795821,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_L6H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053172,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795821,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_L6H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283420,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795821,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_L6H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179948,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795820,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "76.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H8G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053171,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795820,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "76.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H8G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283419,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795820,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "76.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H8G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179947,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795819,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "5",
+        "hasStandardFittingManHour": "213.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H6H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053170,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795819,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "5",
+        "hasStandardFittingManHour": "213.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H6H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283418,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795819,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "5",
+        "hasStandardFittingManHour": "213.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H6H8",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179946,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795818,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "7",
+        "hasStandardFittingManHour": "70.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053169,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795818,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "7",
+        "hasStandardFittingManHour": "70.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283417,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795818,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "7",
+        "hasStandardFittingManHour": "70.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179945,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795817,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "96.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053168,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795817,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "96.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283416,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795817,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "96.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179944,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795816,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-24",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "344.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053167,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795816,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-24",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "344.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283415,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795816,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-24",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "344.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179943,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795815,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "38.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E7M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053166,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795815,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "38.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E7M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283414,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795815,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "38.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E7M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179942,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795814,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "62.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E2H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053165,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795814,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "62.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E2H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283413,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795814,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "62.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_E2H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179941,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795813,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053164,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795813,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283412,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795813,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C5H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179940,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795812,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053163,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795812,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283411,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795812,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179939,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795811,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053162,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795811,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283410,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795811,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179938,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795810,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M5",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053161,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795810,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M5",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283409,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795810,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1M5",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179937,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795809,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "6.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053160,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795809,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "6.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283408,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795809,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "6.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179936,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795808,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053159,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795808,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283407,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795808,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179935,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795807,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053158,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795807,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283406,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795807,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179934,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795806,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "16.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053157,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795806,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "16.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283405,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795806,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "16.0",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179933,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795805,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053156,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795805,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283404,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795805,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E7",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179932,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795804,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "13.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053155,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795804,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "13.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55614,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "643",
+        "uri": "http://hanwha.com/ocean#Block_4376_643"
+      },
+      "relId": 44283403,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795804,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-12",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "13.9",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_643_C1E2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179931,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795803,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053154,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795803,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283402,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795803,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179930,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795802,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053153,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795802,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283401,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795802,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "1.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCS6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179929,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795801,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCE4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053152,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795801,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCE4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283400,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795801,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCE4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179928,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795800,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053151,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795800,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283399,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795800,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_SCC1",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179927,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795799,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S9M9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053150,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795799,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S9M9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283398,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795799,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "25.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S9M9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179926,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795798,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053149,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795798,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283397,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795798,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "10.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S7G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179925,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795797,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "19.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053148,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795797,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "19.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283396,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795797,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "19.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_S6G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179924,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795796,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "26.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053147,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795796,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "26.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283395,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795796,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "2",
+        "hasStandardFittingManHour": "26.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179923,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795795,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "133.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M3H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053146,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795795,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "133.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M3H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283394,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795795,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "133.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_M3H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179922,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795794,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "165.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053145,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795794,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "165.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283393,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795794,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "10",
+        "hasStandardFittingManHour": "165.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H4G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179921,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795793,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "3",
+        "hasStandardFittingManHour": "146.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053144,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795793,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "3",
+        "hasStandardFittingManHour": "146.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283392,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795793,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "3",
+        "hasStandardFittingManHour": "146.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_H2G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179920,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795792,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-22",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "303.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053143,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795792,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-22",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "303.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283391,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795792,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-22",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "303.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_G9G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179919,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795791,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "17.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E4H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053142,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795791,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "17.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E4H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283390,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795791,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "17.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E4H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179918,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795790,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "98.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E3M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053141,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795790,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "98.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E3M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283389,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795790,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "98.2",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_E3M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179917,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795789,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C5S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053140,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795789,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C5S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283388,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795789,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.5",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C5S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179916,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795788,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053139,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795788,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283387,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795788,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179915,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795787,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053138,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795787,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283386,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795787,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.1",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1S6",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179914,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795786,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053137,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795786,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283385,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795786,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.8",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1M3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179913,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795785,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053136,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795785,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283384,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795785,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179912,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795784,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053135,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795784,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283383,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795784,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "3.6",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1H2",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179911,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795783,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053134,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795783,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283382,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795783,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "5.4",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1G9",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179910,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795782,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053133,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795782,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283381,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795782,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "4.3",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E4",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179909,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795781,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 10391,
+      "targetLabels": ["ABoxNode", "OverseaShop"],
+      "targetProps": {
+        "isPaintingShop": "True",
+        "isAssemblyShop": "True",
+        "hasCode": "DSC",
+        "isOutfittingShop": "True",
+        "comment": "\uc911\uad6d DSSC",
+        "isCuttingShop": "True",
+        "isErectionShop": "True",
+        "uri": "http://hanwha.com/ocean#Shop_DSC"
+      },
+      "relId": 44053132,
+      "relType": "ASSIGNEDTOSHOP",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795781,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 55615,
+      "targetLabels": ["ABoxNode", "Block"],
+      "targetProps": {
+        "hasCode": "642",
+        "uri": "http://hanwha.com/ocean#Block_4376_642"
+      },
+      "relId": 44283380,
+      "relType": "PLANNEDONBLOCK",
+      "relProps": {}
+    },
+    {
+      "sourceId": 7795781,
+      "sourceLabels": ["ABoxNode", "MonthlyAssemblyPlan"],
+      "sourceProps": {
+        "hasStandardGrindingManHour": "0.0",
+        "hasPlannedEndDate": "2024-07-10",
+        "hasDelay": "0",
+        "hasStandardFittingManHour": "2.7",
+        "hasStandardWeldingManHour": "0.0",
+        "uri": "http://hanwha.com/ocean#AssemblyPlan_4376_642_C1E3",
+        "hasPlannedStartDate": "2024-05-13"
+      },
+      "targetId": 50916,
+      "targetLabels": ["ABoxNode", "ContainerCarrier", "Project"],
+      "targetProps": { "uri": "http://hanwha.com/ocean#Proj_4376" },
+      "relId": 45179908,
+      "relType": "PLANNEDONPROJECT",
+      "relProps": {}
+    }
+  ]
+}

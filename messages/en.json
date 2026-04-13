@@ -1,0 +1,148 @@
+{
+  "Login": {
+    "title1": "EUM Admin",
+    "title2": "Login",
+    "title3": "Work faster and with more accuracy",
+    "title4": "Enter your ID and password to get started.",
+    "form": {
+      "userId": "Please enter your ID",
+      "password": "Please enter your password",
+      "forgotPassword": "Forgot your password?",
+      "login": "Login",
+      "loginInProgress": "Logging in..."
+    },
+    "validation": {
+      "userId": "Please enter your ID",
+      "password": "Please enter your password"
+    },
+    "error": {
+      "unauthorized": "Incorrect ID or password"
+    }
+  },
+  "Error": {
+    "login": {
+      "title": "Login Error",
+      "backend": "Login failed",
+      "system": "A system error occurred"
+    },
+    "askAdmin": "Please contact the administrator"
+  },
+  "MainEntry": {
+    "title": "Choose Your Destination",
+    "subtitle": "You are signed in as an admin. Select where you want to go.",
+    "recent": "Recent",
+    "user": {
+      "badge": "User",
+      "title": "User Page",
+      "description": "Go to the EUM Dashboard user menu.",
+      "cta": "Go to User Page",
+      "feature1": "Enter operational menus directly",
+      "feature2": "Start from query execution"
+    },
+    "admin": {
+      "badge": "Admin",
+      "title": "Admin Page",
+      "description": "Go to the administrator-only page.",
+      "cta": "Go to Admin Page",
+      "feature1": "Access management screens",
+      "feature2": "Use admin-only capabilities"
+    }
+  },
+  "AdminUsers": {
+    "title": "Admin Page",
+    "subtitle": "Review users and create new accounts.",
+    "listTitle": "User List",
+    "total": "Total {count}",
+    "refresh": "Refresh",
+    "empty": "No users found.",
+    "columns": {
+      "alias": "Alias",
+      "userId": "User ID",
+      "createdAt": "Created At"
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "createTitle": "Add User",
+    "createButton": "Add User",
+    "cancel": "Cancel",
+    "creating": "Adding...",
+    "form": {
+      "alias": "Alias",
+      "userId": "User ID",
+      "password": "Password",
+      "aliasPlaceholder": "Alias (2-32 chars)",
+      "userIdPlaceholder": "User ID",
+      "passwordPlaceholder": "Password (8-64 chars)"
+    },
+    "validation": {
+      "alias": "Alias must be 2-32 characters",
+      "userId": "Please enter a User ID",
+      "password": "Password must be 8-64 characters"
+    },
+    "toast": {
+      "loadFail": "Failed to load users",
+      "createSuccess": "User has been added",
+      "createFail": "Failed to add user"
+    }
+  },
+  "LoadingScreen": {
+    "loadingMessage": "Processing..."
+  },
+  "Locale": {
+    "auto": "Auto Detect",
+    "en": "English",
+    "ko": "한국어"
+  },
+  "QueryExecution": {
+    "title": "Query Execution",
+    "description": "Execute Neo4j Cypher queries and visualize the results",
+    "queryHistory": "Query History",
+    "queryModeLabel": "Input Mode",
+    "modeNatural": "Natural Language",
+    "modeCypher": "Cypher Query",
+    "queryLabel": "Cypher Query",
+    "queryPlaceholder": "Enter your Neo4j Cypher query here...",
+    "queryPlaceholderNatural": "Describe what you want to find in natural language...",
+    "queryPlaceholderCypher": "Enter your Neo4j Cypher query here...",
+    "execute": "Execute",
+    "executing": "Executing...",
+    "clear": "Clear",
+    "results": "Results",
+    "relationshipCount": "relationships",
+    "noResults": "No results found",
+    "errorExecutingQuery": "Error executing query",
+    "unknownError": "An unknown error occurred",
+    "tabGraph": "Graph",
+    "tabTable": "Table",
+    "tabRaw": "Raw"
+  },
+  "Neo4jGraph": {
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "enlarge": "Enlarge",
+    "shrink": "Shrink",
+    "zoom": "Zoom to fit",
+    "fullView": "Full View ({count} nodes)",
+    "close": "Close",
+    "graphInfo": "Graph Information",
+    "labels": "Labels",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "showOnlyConnected": "Show Only Connected",
+    "selectedNode": "Selected Node",
+    "relations": "Relations",
+    "nodes": "Nodes",
+    "moreItems": "+{count} more",
+    "selectedRelation": "Selected Relation",
+    "from": "From",
+    "to": "To",
+    "connectedRelations": "Connected Relations",
+    "connectedNodes": "Connected Nodes",
+    "relationsLabel": "Relations",
+    "graphCollapsed": "{nodeCount} nodes · {relCount} relations",
+    "previewShowing": "Showing {count} of them",
+    "clickToExpand": "Click to expand"
+  }
+}

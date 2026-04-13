@@ -1,0 +1,1186 @@
+version: '1.1'
+domain: 'shipbuilding_block_production'
+description: |
+  조선소 블록 생산 계획/실적 관리 도메인 스키마.
+  Neo4j 온톨로지 기반으로 선박 건조 과정의 계획 수립, 실적 추적,
+  지연 관리, 이슈 관리를 포괄한다.
+
+# ═══════════════════════════════════════════════════════════════
+# 도메인 컨텍스트 — 추출 시 LLM이 참조할 배경 지식
+# ═══════════════════════════════════════════════════════════════
+
+domain_context:
+  production_flow:
+    description: |
+      선박 건조 공정 흐름: 설계 → 절단 → 소조립 → 중조립 → 대조립 → PE(선행의장) → 탑재 → 의장 → 시운전 → 인도.
+      각 단계별 계획(Plan)과 실적(Actual) 노드가 존재하며, 블록/프로젝트/공장에 매핑된다.
+
+  ship_type_labels:
+    description: 'Project 노드는 선종에 따라 추가 레이블을 가짐'
+    types:
+      ChemicalTanker: '케미컬 탱커'
+      ContainerCarrier: '컨테이너선'
+      OilCarrier: '유조선'
+      LPGCarrier: 'LPG 운반선'
+      BulkCarrier: '벌크선'
+      OreBulkOilCarrier: '광유겸용선(OBO)'
+      SpecialShip: '특수선'
+
+  project_identification:
+    hull_number: 'Project.uri 끝에 포함된 숫자 (예: Proj_2357 → 2357호선)'
+    ship_type: 'Project 노드의 추가 레이블로 판별 (ChemicalTanker, ContainerCarrier 등)'
+
+  shop_type_classification:
+    description: '공장 노드(InsideShop/OutsideShop/OverseaShop)의 용도별 분류'
+    boolean_note: "불리언 플래그는 STRING 타입으로 'True'/'False' (대문자 첫 글자). 쿼리 시 toLower() 변환 후 비교 권장."
+    rules:
+      조립공장: "InsideShop + toLower(isAssemblyShop)='true'"
+      도장공장: "(InsideShop|OutsideShop|OverseaShop) + toLower(isPaintingShop)='true'"
+      절단공장: "(InsideShop|OutsideShop) + toLower(isCuttingShop)='true'"
+      안벽공장: "OutsideShop + toLower(isErectionShop)='true'"
+      의장공장: "(InsideShop|OutsideShop) + toLower(isOutfittingShop)='true'"
+    overseas_shop_codes: ['DSC', 'NGV', 'DMC', 'DBJ', 'ANG']
+    shop_name_field: 'comment'
+    shop_code_field: 'hasCode'
+
+  date_conventions:
+    format: "ISO 8601 문자열 (예: '2024-06-03')"
+    week_format: 'YYWW (예: 2420 = 2024년 20주차 = 2024-05-13 ~ 2024-05-17)'
+    null_handling: '날짜 속성은 NULL 가능 → IS NOT NULL 체크 필수'
+    type_casting: '문자열 → date() 함수로 변환 후 비교'
+
+  delay_calculation:
+    start_delay: '실제착수일 > 계획착수일이면 착수 지연'
+    completion_delay: '실제종료일 > 계획종료일이면 완료 지연'
+    actual_end_date_resolution: 'coalesce(hasAdjustedActualEndDate, hasActualEndDateByStaff)'
+    delay_days_formula: 'duration.between(계획일, 실적일).days'
+
+  relationship_direction_rules:
+    description: '모든 Plan/Actual 노드가 관계의 시작점(source)'
+    patterns:
+      - '(Plan/Actual)-[:ASSIGNEDTOSHOP]->(Shop)'
+      - '(Plan/Actual)-[:PLANNEDONBLOCK]->(Block)'
+      - '(Plan/Actual)-[:PLANNEDONPROJECT]->(Project/선종)'
+
+  query_node_selection:
+    진행중_작업_계획기준: 'MonthlyAssemblyPlan (plannedStart <= 기준일 <= plannedEnd)'
+    작업_실적_완료: 'WorkStageActual (actualEndDate 기준)'
+    블록_공정_계획: 'BlockProcessPlan'
+    블록_공정_실적: 'BlockProcessActual'
+    기준계획: 'BasedPlan'
+
+  property_naming_convention: |
+    모든 속성명에 'has' 접두사가 붙지만 의미상 무시한다.
+    예) hasPlannedStartDate → 실질적 의미는 PlannedStartDate.
+    단, 데이터 접근 시에는 hasPlannedStartDate 로 사용해야 한다.
+
+# ═══════════════════════════════════════════════════════════════
+# 엔티티 타입 정의
+# ═══════════════════════════════════════════════════════════════
+
+entity_types:
+  # ─── 생산 계획 ───
+
+  MonthlyAssemblyPlan:
+    description: |
+      월간 조립 계획. 블록별·공장별 착수/종료 계획일과 표준 공수를 관리한다.
+      착수 지연 블록 조회 시 hasPlannedStartDate 기준으로 필터링한다.
+    properties:
+      hasPlannedStartDate:
+        {
+          type: string,
+          required: true,
+          description: '계획 착수일 (ISO 날짜 문자열)',
+        }
+      hasPlannedEndDate:
+        {
+          type: string,
+          required: true,
+          description: '계획 종료일 (ISO 날짜 문자열)',
+        }
+      hasStandardGrindingManHour:
+        { type: string, required: false, description: '표준 그라인딩 공수(MH)' }
+      hasStandardFittingManHour:
+        { type: string, required: false, description: '표준 취부 공수(MH)' }
+      hasStandardWeldingManHour:
+        { type: string, required: false, description: '표준 용접 공수(MH)' }
+      hasDelay:
+        {
+          type: string,
+          required: false,
+          description: '지연 정보 (실제 데이터 미입력 필드)',
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - '2357호선 Block A10 조립2공장 월간계획 (착수 2024-06-03, 종료 2024-06-14)'
+
+  BasedPlan:
+    description: |
+      기준 계획. 프로젝트·블록·공장별 계획/실적 4종 날짜를 모두 보유한다.
+      해외(OOS) 공장 착수·완료 지연 조회 시 MonthlyAssemblyPlan과 매칭하여 사용.
+      BasedPlan 매칭은 동일 Block + 동일 Project 기준으로 수행한다.
+    properties:
+      hasPlannedStartDate:
+        { type: string, required: true, description: '계획 착수일' }
+      hasPlannedEndDate:
+        { type: string, required: true, description: '계획 종료일' }
+      hasActualStartDate:
+        { type: string, required: false, description: '실적 착수일' }
+      hasActualEndDate:
+        { type: string, required: false, description: '실적 종료일' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - '2357호선 Block A10 기준계획 (계획: 2024-06-03~06-14, 실적: 2024-06-05~06-16)'
+
+  BlockProcessPlan:
+    description: |
+      블록 공정 계획. 블록별 세부 공정 단계(절단, 소조립, 중조립 등)의 계획 일정.
+      지연 판단 시 BlockProcessActual과 비교하여 착수/완료 지연을 산출한다.
+    properties:
+      hasPlannedStartDate:
+        { type: string, required: true, description: '계획 착수일' }
+      hasPlannedEndDate:
+        { type: string, required: true, description: '계획 종료일' }
+      hasActualStartDate:
+        { type: string, required: false, description: '실적 착수일' }
+      hasActualEndDate:
+        { type: string, required: false, description: '실적 종료일' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  # ─── 생산 실적 ───
+
+  WorkStageActual:
+    description: |
+      작업 단계 실적. 공장별·블록별 실제 착수/종료 일자를 기록한다.
+      '작업 실적/완료' 조회 시 사용한다.
+      주의: 속성이 희소(sparse)하여 많은 노드가 uri만 보유하고, 날짜 속성은 일부 노드에만 존재한다.
+    properties:
+      hasActualStartDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '실적 착수일 (현장 입력, 희소)',
+        }
+      hasActualEndDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '실적 종료일 (현장 입력, 희소)',
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  BlockProcessActual:
+    description: |
+      블록 공정 실적. 블록별 세부 공정의 실제 진행 일자를 기록한다.
+      실적 종료일은 coalesce(hasAdjustedActualEndDate, hasActualEndDateByStaff) 로 결정한다.
+      지연 판단: 착수 지연 = hasActualStartDateByStaff > BlockProcessPlan.hasPlannedStartDate
+                완료 지연 = hasActualEndDateByStaff > BlockProcessPlan.hasPlannedEndDate
+    properties:
+      hasActualStartDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '실적 착수일 (현장 입력)',
+        }
+      hasActualEndDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '실적 종료일 (현장 입력)',
+        }
+      hasAdjustedActualStartDate:
+        { type: string, required: false, description: '보정 실적 착수일' }
+      hasAdjustedActualEndDate:
+        { type: string, required: false, description: '보정 실적 종료일' }
+      hasPlannedStartDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '계획 착수일 (현장 입력)',
+        }
+      hasPlannedEndDateByStaff:
+        {
+          type: string,
+          required: false,
+          description: '계획 종료일 (현장 입력)',
+        }
+      hasRequestedInspectionDate:
+        { type: string, required: false, description: '검사 요청일' }
+      hasConfirmedInspectionDate:
+        { type: string, required: false, description: '검사 확정일' }
+      display: { type: string, required: false, description: '표시명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  # ─── 선박/프로젝트 ───
+
+  Project:
+    description: |
+      건조 프로젝트(호선). URI 끝의 숫자가 호선 번호이다.
+      예: uri="...#Proj_2357" → 2357호선.
+      선종은 노드의 추가 레이블로 표현된다 (ChemicalTanker, ContainerCarrier 등).
+    properties:
+      uri:
+        {
+          type: string,
+          required: true,
+          description: '고유 식별자(URI) — 호선 번호 포함',
+        }
+      display: { type: string, required: false, description: '표시명' }
+      project_id: { type: string, required: false, description: '프로젝트 ID' }
+    state_tracking: false
+    examples:
+      - '2357호선 (uri: ...#Proj_2357)'
+      - '2410호선 케미컬 탱커 (레이블: Project + ChemicalTanker)'
+
+  BulkCarrier:
+    description: '프로젝트 선종 레이블: 벌크선'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  ChemicalTanker:
+    description: '프로젝트 선종 레이블: 케미컬 탱커'
+    properties:
+      display: { type: string, required: false, description: '표시명' }
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  ContainerCarrier:
+    description: '프로젝트 선종 레이블: 컨테이너선'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  LPGCarrier:
+    description: '프로젝트 선종 레이블: LPG 운반선'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  OilCarrier:
+    description: '프로젝트 선종 레이블: 유조선'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  OreBulkOilCarrier:
+    description: '프로젝트 선종 레이블: 광유겸용선(OBO)'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  SpecialShip:
+    description: '프로젝트 선종 레이블: 특수선'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자' }
+    state_tracking: false
+
+  Block:
+    description: |
+      선체 블록 — 건조 분할 단위.
+      소조립 → 중조립 → 대조립 → PE(선행의장) → 탑재 순서로 진행.
+      hasCode가 블록 식별 코드이며, 숫자(434) 또는 영숫자(40D, 20A) 형태.
+      URI 패턴: http://hanwha.com/ocean#Block_{호선}_{코드}
+    properties:
+      hasCode:
+        {
+          type: string,
+          required: true,
+          description: '블록 코드 (예: 434, 40D, 20A, 101)',
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - 'Block 434 (hasCode: 434)'
+      - 'Block 40D (hasCode: 40D)'
+      - 'Block 101 (hasCode: 101)'
+
+  # ─── 공장/시설 ───
+
+  InsideShop:
+    description: |
+      사내 공장. 조립·도장·절단·의장 등 용도별 불리언 플래그로 분류.
+      공장 코드: hasCode, 공장 이름: comment.
+      URI 패턴: http://hanwha.com/ocean#Shop_{코드}
+    properties:
+      hasCode:
+        {
+          type: string,
+          required: true,
+          description: '공장 코드 (예: TSO, POS, OFE)',
+        }
+      comment:
+        {
+          type: string,
+          required: false,
+          description: '공장명 (한국어, 예: 특수선 옥외공장)',
+        }
+      isAssemblyShop:
+        {
+          type: string,
+          required: false,
+          description: "조립공장 여부 (STRING 'True'/'False')",
+        }
+      isPaintingShop:
+        {
+          type: string,
+          required: false,
+          description: "도장공장 여부 (STRING 'True'/'False')",
+        }
+      isCuttingShop:
+        {
+          type: string,
+          required: false,
+          description: "절단공장 여부 (STRING 'True'/'False')",
+        }
+      isErectionShop:
+        {
+          type: string,
+          required: false,
+          description: "안벽(탑재)공장 여부 (STRING 'True'/'False')",
+        }
+      isOutfittingShop:
+        {
+          type: string,
+          required: false,
+          description: "의장공장 여부 (STRING 'True'/'False')",
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - "특수선 옥외공장 (hasCode: TSO, isAssemblyShop: 'True')"
+
+  OutsideShop:
+    description: |
+      사외 공장(국내 협력사). 사내공장과 동일한 용도별 플래그 체계.
+      예: (주)유일(YUL), 영창중공업(YCH), STX중공업(STX) 등.
+    properties:
+      hasCode:
+        {
+          type: string,
+          required: true,
+          description: '공장 코드 (예: YUL, YCH, STX)',
+        }
+      comment:
+        { type: string, required: false, description: '공장명 (예: (주)유일)' }
+      isAssemblyShop:
+        {
+          type: string,
+          required: false,
+          description: "조립공장 여부 (STRING 'True'/'False')",
+        }
+      isPaintingShop:
+        { type: string, required: false, description: '도장공장 여부' }
+      isCuttingShop:
+        { type: string, required: false, description: '절단공장 여부' }
+      isErectionShop:
+        { type: string, required: false, description: '안벽(탑재)공장 여부' }
+      isOutfittingShop:
+        { type: string, required: false, description: '의장공장 여부' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  OverseaShop:
+    description: |
+      해외(OOS) 공장. 주요 코드: DSC(중국 DSSC), NGV(말레이시아), DMC(중국 대련조선), DBJ(중국 대련동방정공), ANG(앙골라).
+      해외 공장 착수·완료 지연 조회 시 MonthlyAssemblyPlan + BasedPlan 조합으로 산출.
+    properties:
+      hasCode:
+        {
+          type: string,
+          required: true,
+          description: '공장 코드 (DSC, NGV, DMC, DBJ, ANG)',
+        }
+      comment:
+        {
+          type: string,
+          required: false,
+          description: '공장명 (예: NGV조선소(말레이시아), 중국 DSSC)',
+        }
+      isAssemblyShop:
+        { type: string, required: false, description: '조립공장 여부' }
+      isPaintingShop:
+        { type: string, required: false, description: '도장공장 여부' }
+      isCuttingShop:
+        { type: string, required: false, description: '절단공장 여부' }
+      isErectionShop:
+        { type: string, required: false, description: '안벽(탑재)공장 여부' }
+      isOutfittingShop:
+        { type: string, required: false, description: '의장공장 여부' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - 'DSC 공장 (중국, hasCode: DSC)'
+      - 'NGV 공장 (말레이시아, hasCode: NGV)'
+
+  # ─── 공정/작업 단계 ───
+
+  BlockProcess:
+    description: |
+      블록 공정 마스터 — 공정 단계 정의.
+      주요 공정: S00(조립), W00(선행의장(B)), P00(선행도장), E00(PE), E90(탑재), X00(사외).
+    properties:
+      hasCode:
+        {
+          type: string,
+          required: true,
+          description: '공정 코드 (예: S00, W00, P00, E00, E90)',
+        }
+      hasName:
+        {
+          type: string,
+          required: false,
+          description: '공정명 (예: 조립, 선행의장(B), PE, 탑재)',
+        }
+      hasSeq:
+        {
+          type: string,
+          required: false,
+          description: '순번 (공정 순서, 예: 20=조립, 80=선행도장, 200=PE, 400=탑재)',
+        }
+      comment: { type: string, required: false, description: '공정 설명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - 'S00: 조립 (seq=20)'
+      - 'P00: 선행도장 (seq=80)'
+      - 'E00: PE (seq=200)'
+      - 'E90: 탑재 (seq=400)'
+
+  WorkStageType:
+    description: |
+      작업 단계 타입. 계획/실적 노드가 HASWORKSTAGETYPE 관계로 참조한다.
+      hasCode: 단계 코드, comment: 단계명.
+    properties:
+      hasCode: { type: string, required: true, description: '작업 단계 코드' }
+      comment: { type: string, required: false, description: '작업 단계명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  Work:
+    description: '작업 항목 마스터'
+    properties:
+      hasCode: { type: string, required: true, description: '작업 코드' }
+      comment: { type: string, required: false, description: '작업명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  WorkActivity:
+    description: '작업 활동 (프로세스·프로세서·스테이지·플래그 코드로 구분)'
+    properties:
+      hasProcessCode:
+        { type: string, required: false, description: '프로세스 코드' }
+      hasProcesserCode:
+        { type: string, required: false, description: '프로세서 코드' }
+      hasStageCode:
+        { type: string, required: false, description: '스테이지 코드' }
+      hasFlagCode: { type: string, required: false, description: '플래그 코드' }
+      comment: { type: string, required: false, description: '활동명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  WorkLocation:
+    description: '작업 위치'
+    properties:
+      hasCode: { type: string, required: false, description: '위치 코드' }
+      comment: { type: string, required: false, description: '위치명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  # ─── 장비/설비 ───
+
+  Jig:
+    description: '지그 — 블록 조립 시 사용하는 고정 설비'
+    properties:
+      comment: { type: string, required: false, description: '지그명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  Transporter:
+    description: '운반 장비 (트랜스포터, 크레인 등)'
+    properties:
+      hasEquipmentId: { type: string, required: false, description: '장비 ID' }
+      hasCode: { type: string, required: false, description: '장비 코드' }
+      hasMaxWeight: { type: string, required: false, description: '최대 중량' }
+      hasMaxHeight: { type: string, required: false, description: '최대 높이' }
+      hasMinHeight: { type: string, required: false, description: '최소 높이' }
+      hasBreadth: { type: string, required: false, description: '폭' }
+      hasLength: { type: string, required: false, description: '길이' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  # ─── 이슈 관리 ───
+
+  Issue:
+    description: |
+      생산 과정에서 발생한 이슈, 리스크, 부적합(NCR).
+      프로젝트(선종)가 HAS_ISSUE 관계로 소유하며,
+      원인(Cause), 영향(Impact), 조치(Action), 증빙(DataEvidence), 부가정보(ExtraInfo)와 연결된다.
+      URI 패턴: http://hanwha.com/ocean/abox/issue/{uuid}
+    properties:
+      title:
+        { type: string, required: false, description: '이슈 제목 (한국어)' }
+      issue_id: { type: string, required: false, description: '이슈 ID (UUID)' }
+      issue_type:
+        {
+          type: string,
+          required: false,
+          description: '이슈 유형 (예: LD노출, 일정 단축 관리, 품질)',
+        }
+      category:
+        {
+          type: string,
+          required: false,
+          description: '분류',
+          enum: [자재, 선행, 사외, 공정, 안전, 품질, 용접, 도장, 설계],
+        }
+      risk:
+        {
+          type: string,
+          required: false,
+          description: '리스크 설명 (예: LD 노출, 일정 지연)',
+        }
+      week:
+        {
+          type: string,
+          required: false,
+          description: '발생 주차 (YYWW, 예: 2518)',
+        }
+      '~id':
+        { type: string, required: false, description: '내부 ID (issue::UUID)' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: true
+    state_fields:
+      status: { type: string, enum: [Open, 'In Progress', Resolved, Closed] }
+    examples:
+      - '2530~2535 구간 6척 LD 노출'
+      - 'H5508 B#11D 탑재 전 발판 철거를 위한 주요 관리점'
+      - 'H.4393 C/Guide 용접 중점관리 요청'
+
+  Action:
+    description: '이슈에 대한 조치/대응 방안. URI 패턴: .../abox/action/{hash}'
+    properties:
+      description:
+        {
+          type: string,
+          required: false,
+          description: '조치 내용 (한국어 우선)',
+        }
+      '~id':
+        {
+          type: string,
+          required: false,
+          description: '내부 ID (action::설명텍스트)',
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - '10C 조기화 및 10C PE 후 작업 집중 필요'
+      - '협력사와 일정 재조정'
+
+  Cause:
+    description: '이슈 원인 분석. URI 패턴: .../abox/cause/{hash}'
+    properties:
+      description:
+        {
+          type: string,
+          required: false,
+          description: '원인 설명 (한국어 우선)',
+        }
+      category:
+        {
+          type: string,
+          required: false,
+          description: '원인 분류 (예: 자재 입고 지연)',
+        }
+      '~id':
+        {
+          type: string,
+          required: false,
+          description: '내부 ID (cause::설명|분류)',
+        }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  Impact:
+    description: '이슈가 미치는 영향. URI 패턴: .../abox/impact/{hash}'
+    properties:
+      description:
+        {
+          type: string,
+          required: false,
+          description: '영향 설명 (한국어 우선)',
+        }
+      category:
+        {
+          type: string,
+          required: false,
+          description: '영향 분류 (예: 일정지연)',
+        }
+      '~id': { type: string, required: false, description: '내부 ID' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  DataEvidence:
+    description: '이슈 증빙 데이터 (사진, 검사 결과, 측정값 등). URI 패턴: .../abox/data_evidence/{hash}'
+    properties:
+      description: { type: string, required: false, description: '증빙 설명' }
+      '~id': { type: string, required: false, description: '내부 ID' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  ExtraInfo:
+    description: '이슈 부가 정보 (참고사항, 배경 설명 등). URI 패턴: .../abox/extra/{hash}'
+    properties:
+      description:
+        { type: string, required: false, description: '부가 정보 내용' }
+      '~id': { type: string, required: false, description: '내부 ID' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  # ─── 조직 ───
+
+  Organization:
+    description: '조직, 회사, 부서, 협력사, 선주, 선급'
+    properties:
+      hasName: { type: string, required: false, description: '조직명' }
+      hasCode: { type: string, required: false, description: '조직 코드' }
+      comment: { type: string, required: false, description: '설명' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - '한화오션'
+      - "Lloyd's Register (선급)"
+
+  Team:
+    description: "팀 — 이슈 담당 조직 단위. 복수 팀은 '|'로 구분 (예: '조립2팀 | 생산계획팀')"
+    properties:
+      name:
+        {
+          type: string,
+          required: false,
+          description: '팀명 (복수 팀은 | 구분)',
+        }
+      '~id':
+        { type: string, required: false, description: '내부 ID (team::팀명)' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+    examples:
+      - 'LNGC생산팀'
+      - '조립2팀 | 조립3팀 | 선행의장팀 | 생산계획팀'
+
+  CostGroup:
+    description: '코스트 그룹 — 원가 집계 단위'
+    properties:
+      hasCode:
+        { type: string, required: false, description: '코스트 그룹 코드' }
+      comment: { type: string, required: false, description: '명칭' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  CriticalActivity:
+    description: '크리티컬 액티비티 — 공기에 영향을 주는 핵심 작업'
+    properties:
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+  CriticalPath:
+    description: '크리티컬 패스 — 공기 결정 경로'
+    properties:
+      hasBuffer: { type: string, required: false, description: '버퍼 일수' }
+      uri: { type: string, required: false, description: '고유 식별자(URI)' }
+    state_tracking: false
+
+# ═══════════════════════════════════════════════════════════════
+# 관계 타입 정의
+# ═══════════════════════════════════════════════════════════════
+
+relation_types:
+  # ─── 이슈 관련 ───
+
+  HAS_ISSUE:
+    description: '프로젝트(선종 포함)가 이슈를 가짐'
+    source: Project
+    target: Issue
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [Project, ChemicalTanker],
+          target_labels: [Issue],
+          count: 284,
+        }
+      - {
+          source_labels: [Project, ContainerCarrier],
+          target_labels: [Issue],
+          count: 220,
+        }
+      - {
+          source_labels: [Project, OilCarrier],
+          target_labels: [Issue],
+          count: 109,
+        }
+      - {
+          source_labels: [Project, ChemicalTanker, LPGCarrier],
+          target_labels: [Issue],
+          count: 74,
+        }
+      - {
+          source_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          target_labels: [Issue],
+          count: 28,
+        }
+      - { source_labels: [Project], target_labels: [Issue], count: 9 }
+      - {
+          source_labels: [SpecialShip, Project],
+          target_labels: [Issue],
+          count: 1,
+        }
+
+  OWNED_BY:
+    description: '이슈가 팀에 의해 소유/담당됨'
+    source: Issue
+    target: Team
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [Team], count: 725 }
+
+  MITIGATED_BY:
+    description: '이슈가 조치(Action)로 완화됨'
+    source: Issue
+    target: Action
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [Action], count: 537 }
+
+  SUPPORTED_BY:
+    description: '이슈가 증빙 데이터로 뒷받침됨'
+    source: Issue
+    target: DataEvidence
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [DataEvidence], count: 705 }
+
+  CAUSES_IMPACT:
+    description: '이슈가 영향을 유발함'
+    source: Issue
+    target: Impact
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [Impact], count: 604 }
+
+  HAS_CAUSE:
+    description: '이슈가 원인을 가짐'
+    source: Issue
+    target: Cause
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [Cause], count: 687 }
+
+  HAS_EXTRA:
+    description: '이슈가 부가정보를 가짐'
+    source: Issue
+    target: ExtraInfo
+    properties: {}
+    observed_pairs:
+      - { source_labels: [Issue], target_labels: [ExtraInfo], count: 101 }
+
+  # ─── 계획/실적 → 공장 배정 ───
+
+  ASSIGNEDSHOP:
+    description: '기준 계획(BasedPlan)이 공장에 배정됨'
+    source: BasedPlan
+    target: InsideShop
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [InsideShop],
+          count: 3773387,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [OutsideShop],
+          count: 1470864,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [OverseaShop],
+          count: 445999,
+        }
+
+  ASSIGNEDTOSHOP:
+    description: |
+      계획/실적/공정이 공장에 배정됨.
+      방향: (Plan/Actual) → (Shop). 모든 Plan/Actual 노드가 시작점.
+    source: MonthlyAssemblyPlan
+    target: InsideShop
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [InsideShop],
+          count: 252124,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [InsideShop],
+          count: 252109,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [OutsideShop],
+          count: 216222,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [OutsideShop],
+          count: 215231,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [OverseaShop],
+          count: 93981,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [OverseaShop],
+          count: 93975,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [InsideShop],
+          count: 71110,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [InsideShop],
+          count: 25517,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [OutsideShop],
+          count: 321,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [OverseaShop],
+          count: 40,
+        }
+
+  # ─── 계획/실적 → 블록/프로젝트 매핑 ───
+
+  PLANNEDONBLOCK:
+    description: |
+      계획/실적/공정이 블록에 매핑됨.
+      방향: (Plan/Actual) → (Block).
+    source: BasedPlan
+    target: Block
+    properties: {}
+    observed_pairs:
+      - { source_labels: [BasedPlan], target_labels: [Block], count: 5703879 }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Block],
+          count: 559811,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Block],
+          count: 558809,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Block],
+          count: 71786,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Block],
+          count: 71278,
+        }
+
+  PLANNEDONPROJECT:
+    description: |
+      계획/실적/공정이 프로젝트(선종 포함)에 매핑됨.
+      방향: (Plan/Actual) → (Project).
+    source: BasedPlan
+    target: Project
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [Project, ChemicalTanker],
+          count: 2630611,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [Project, ContainerCarrier],
+          count: 1742983,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [SpecialShip, Project],
+          count: 843396,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Project, ChemicalTanker],
+          count: 222479,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Project, ChemicalTanker],
+          count: 222467,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Project, ContainerCarrier],
+          count: 213235,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [Project, ChemicalTanker, LPGCarrier],
+          count: 212605,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Project, ContainerCarrier],
+          count: 212308,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          count: 168168,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Project, OilCarrier],
+          count: 40307,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Project, OilCarrier],
+          count: 40307,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Project, ChemicalTanker, LPGCarrier],
+          count: 36767,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Project, ChemicalTanker, LPGCarrier],
+          count: 36764,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Project, ChemicalTanker],
+          count: 32518,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Project, ChemicalTanker],
+          count: 32317,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          count: 25406,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          count: 25406,
+        }
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [SpecialShip, Project],
+          count: 22322,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [SpecialShip, Project],
+          count: 22252,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Project, ContainerCarrier],
+          count: 21802,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Project, ContainerCarrier],
+          count: 21748,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Project, OilCarrier],
+          count: 7728,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Project, OilCarrier],
+          count: 7710,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Project, ChemicalTanker, LPGCarrier],
+          count: 4765,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Project, ChemicalTanker, LPGCarrier],
+          count: 4714,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          count: 2593,
+        }
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [SpecialShip, Project],
+          count: 2588,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [Project, OilCarrier, OreBulkOilCarrier],
+          count: 2585,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [SpecialShip, Project],
+          count: 2407,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [Project, BulkCarrier],
+          count: 2,
+        }
+
+  # ─── 작업 단계/공정 ───
+
+  HASWORKSTAGETYPE:
+    description: '계획/실적이 작업 단계 타입을 가짐'
+    source: MonthlyAssemblyPlan
+    target: WorkStageType
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [WorkStageType],
+          count: 447291,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [WorkStageType],
+          count: 446521,
+        }
+
+  NEXTWORKSTAGETYPE:
+    description: '다음 작업 단계 타입 (공정 순서 체인)'
+    source: MonthlyAssemblyPlan
+    target: WorkStageType
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [WorkStageType],
+          count: 548131,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [WorkStageType],
+          count: 547121,
+        }
+
+  ASSIGNEDTOJIG:
+    description: '계획/실적이 지그에 배정됨'
+    source: MonthlyAssemblyPlan
+    target: Jig
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [MonthlyAssemblyPlan],
+          target_labels: [Jig],
+          count: 250841,
+        }
+      - {
+          source_labels: [WorkStageActual],
+          target_labels: [Jig],
+          count: 250826,
+        }
+
+  ASSIGNEDWORKITEM:
+    description: '기준 계획이 작업/코스트그룹/활동에 배정됨'
+    source: BasedPlan
+    target: Work
+    properties: {}
+    observed_pairs:
+      - { source_labels: [BasedPlan], target_labels: [Work], count: 5039194 }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [CostGroup],
+          count: 5036117,
+        }
+      - {
+          source_labels: [BasedPlan],
+          target_labels: [WorkActivity],
+          count: 3396544,
+        }
+
+  ASSIGNEDBLOCKPROCESS:
+    description: '블록 공정 계획/실적이 블록 공정 마스터에 배정됨'
+    source: BlockProcessPlan
+    target: BlockProcess
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [BlockProcessActual],
+          target_labels: [BlockProcess],
+          count: 72085,
+        }
+      - {
+          source_labels: [BlockProcessPlan],
+          target_labels: [BlockProcess],
+          count: 71567,
+        }
+
+  SIMILARWITH:
+    description: '작업/코스트그룹이 작업활동과 유사 관계'
+    source: Work
+    target: WorkActivity
+    properties: {}
+    observed_pairs:
+      - {
+          source_labels: [CostGroup],
+          target_labels: [WorkActivity],
+          count: 1039,
+        }
+      - { source_labels: [Work], target_labels: [WorkActivity], count: 1009 }
+
+# ═══════════════════════════════════════════════════════════════
+# 추출 지침
+# ═══════════════════════════════════════════════════════════════
+
+extraction_guidelines:
+  - "엔티티 이름은 구체적이고 식별 가능하게 추출하라 (예: '블록' ✗ → 'Block A10 기관실 하부' ✓)"
+  - 'description 필드는 문서 맥락에서 해당 엔티티를 설명하는 1~2문장을 한국어로 생성하라'
+  - '블록 코드(Block A10, ER-B10 등)는 반드시 Block 엔티티로 추출하라'
+  - '호선 번호(H2357, 2357호선 등)는 Project 엔티티로 추출하고, 선종 레이블이 언급되면 함께 기록하라'
+  - '공장명이 언급되면 InsideShop/OutsideShop/OverseaShop 중 적절한 타입으로 추출하고, 용도 플래그(isAssemblyShop 등)를 설정하라'
+  - "계획일·실적일이 언급되면 ISO 8601 날짜 문자열로 기록하라 (예: '2024-06-03')"
+  - '주차(YYWW) 표현이 있으면 ISO 주차 기준으로 날짜 범위를 산출하라 (예: 2420주 = 2024-05-13 ~ 2024-05-17)'
+  - '속성명은 has 접두사 규칙을 따르라 (예: hasPlannedStartDate, hasCode)'
+  - '관계 방향은 반드시 Plan/Actual 노드가 시작점이 되어야 한다 (예: MonthlyAssemblyPlan → Block)'
+  - "NDT 검사(RT, UT, MT, PT) 결과가 언급되면 Issue 엔티티로 추출하고 category를 '품질'로 설정하라"
+  - '동일 엔티티가 여러 번 언급되면 하나로 통합하라'
+  - '스키마에 정의되지 않은 새로운 유형이 발견되면 candidate_type에 제안 유형명을 기재하라'
+  - '확실하지 않은 관계는 추출하지 마라 — 정밀도(Precision)가 재현율(Recall)보다 중요하다'
+  - '지연 관련 정보가 있으면 Issue로 추출하고, 영향받는 Block/Project와 관계를 설정하라'
+  - 'OOS(해외) 공장 코드가 언급되면 OverseaShop 타입으로 추출하라 (DSC, NGV, DMC, DBJ, ANG)'

@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "WebSearch",
+      "Bash(grep -r \"z-10\\\\|z-20\\\\|z-30\" src/app/[locale]/ --include=*.tsx)",
+      "Bash(grep -r \"background-elevated\\\\|backgroundElevated\" /Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant --include=*.ts --include=*.json -l)",
+      "Bash(grep -r \"background-elevated\\\\|backgroundElevated\" /Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant --include=*.ts --include=*.json --include=*.js -l)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:neo4j.com)",
+      "Bash(grep -r captionSize /Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant/node_modules/.pnpm/@neo4j-nvl+base@1.1.0_neo4j-driver@6.0.1/node_modules/@neo4j-nvl/base/dist/*.js)",
+      "Bash(grep -o \"defaultRelationshipColor[^,;\"\"'''']*\\\\|relColor[^,;\"\"'''']*\\\\|#[0-9a-fA-F]\\\\{6\\\\}\" /Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant/node_modules/.pnpm/@neo4j-nvl+base@1.1.0_neo4j-driver@6.0.1/node_modules/@neo4j-nvl/base/dist/base.mjs)",
+      "Bash(ls \"/Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant/src/app/[locale]/\\(main\\)/\\(assistant\\)/\\(home\\)/\")",
+      "Bash(xargs -I{} bash -c \"grep -n \"\"\\\\.map\\(\"\" {} | head -5\")",
+      "Bash(python3 -c \":*)",
+      "Bash(git -C /Users/gzeromin/Documents/workspace/eum/eum-admin-fe diff messages/ko.json)",
+      "Bash(git -C /Users/gzeromin/Documents/workspace/eum/eum-admin-fe show HEAD:messages/ko.json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)[:20]\\)\")",
+      "Bash(git -C /Users/gzeromin/Documents/workspace/eum/eum-admin-fe show HEAD:messages/en.json)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gzeromin/Documents/workspace/eum/eum-admin-fe/messages/ko.json'\\)\\); print\\('LoadingScreen' in d, list\\(d.keys\\(\\)\\)[-5:]\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gzeromin/Documents/workspace/eum/eum-admin-fe/messages/en.json'\\)\\); print\\('LoadingScreen' in d\\)\")",
+      "Bash(npx shadcn@latest init -y -d)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm build:*)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(npx shadcn:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant/src/app/bff/assistant/chats/[chatId]/threads/[threadId]",
+      "/Users/gzeromin/Documents/workspace/oasis/oasis-fe-assistant/src/app/bff/assistant/chats/[chatId]/threads",
+      "/Users/gzeromin/Documents/workspace/eum/eum-admin-fe/src/hooks",
+      "/Users/gzeromin/Documents/workspace/eum/eum-admin-fe/src/app/[locale]/(main)",
+      "/Users/gzeromin/Documents/workspace/eum/eum-admin-fe/src/app/[locale]/(main)/(user)"
+    ]
+  }
+}

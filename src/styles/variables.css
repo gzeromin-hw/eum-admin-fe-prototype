@@ -1,0 +1,197 @@
+/* ===================================================================
+ * Shared CSS Variables
+ * globals.css 와 globals.storybook.css 에서 공통으로 사용하는 변수
+ * =================================================================== */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Spacing Variables */
+  --py-lg: 80px;
+  --py-md: 40px;
+  --py-sm: 20px;
+  --px-lg: 132px;
+  --px-md: 60px;
+  --px-sm: 24px;
+
+  --header-height: 3rem;
+
+  /* Color System */
+  /* Common Colors */
+  --common-0: #ffffff;
+  --common-100: #000000;
+
+  --error: #f2474b;
+  --danger: #f05252;
+  --danger-strong: #c92a2a;
+  --danger-assistive: #fdf2f2;
+
+  /* Orange Colors */
+  --orange-300: #fdba74;
+  --orange-400: #fb923c;
+  --orange-450: #f97316;
+  --orange-475: #f56b0b;
+  --orange-500: #ea580c;
+  --orange-600: #c2410c;
+  --orange-700: #9a3412;
+
+  /* Gray Colors */
+  --gray-50: #f8fafd;
+  --gray-100: #f2f5fa;
+  --gray-150: #edf0f5;
+  --gray-200: #efefef;
+  --gray-250: #dfdfe0;
+  --gray-300: #a7acb6;
+  --gray-400: #858588;
+  --gray-450: #636367;
+  --gray-500: #47484c;
+  --gray-550: #2f3235;
+  --gray-600: #2f3235;
+  --gray-650: #262a2d;
+  --gray-700: #211c32;
+  --gray-750: #171719;
+  --gray-800: #09031c;
+
+  /* Primary Color System - Light Theme (Default) */
+  --primary-normal: var(--orange-500);
+  --primary-neutral: var(--orange-300);
+  --primary-assistive: var(--orange-400);
+  --primary-strong: var(--orange-600);
+  --primary-heavy: var(--orange-700);
+
+  /* Background Color System - Light Theme (Default) */
+  --background-normal: var(--common-0);
+  --background-neutral: var(--common-0);
+  --background-alternative: var(--gray-100);
+  --background-assistive: var(--common-0);
+
+  --background-default: #fff7ed;
+
+  /* Text Color System - Light Theme (Default) */
+  --strong: var(--gray-750);
+  --normal: var(--gray-700);
+  --neutral: var(--gray-500);
+  --alternative: var(--gray-400);
+  --assistive: var(--gray-300);
+  --disable: var(--gray-250);
+
+  /* Icon Color System - Light Theme (Default) */
+  --icon-normal: var(--gray-500);
+  --icon-neutral: var(--gray-400);
+  --icon-disable: var(--gray-300);
+  --icon-assistive: var(--gray-300);
+
+  /* Line Color System - Light Theme (Default) */
+  --line-normal: var(--gray-200);
+  --line-neutral: var(--gray-200);
+  --line-alternative: var(--gray-250);
+  --line-assistive: var(--gray-250);
+
+  /* Modal Color System - Light Theme (Default) */
+  --modal-line-normal: var(--gray-200);
+  --modal-line-alternative: var(--gray-250);
+  --modal-icon-normal: var(--gray-500);
+  --modal-background-normal: var(--common-0);
+  --modal-background-alternative: var(--common-0);
+  --modal-background-assistive: var(--gray-100);
+  --modal-background-neutral: var(--gray-100);
+
+  /* Dropdown Color System - Light Theme (Default) */
+  --dropdown-background-normal: var(--common-0);
+  --dropdown-background-alternative: var(--gray-50);
+
+  /* Interaction Color System - Light Theme (Default) */
+  --interaction-background-active: var(--gray-100);
+  --interaction-text-active: var(--gray-450);
+  --interaction-text-inactive: var(--gray-300);
+
+  /* Card Color System - Light Theme (Default) */
+  --card-icon-normal: var(--gray-500);
+  --card-assistive: var(--gray-450);
+  --card-text-assistive: var(--gray-450);
+
+  /* Slider Color System - Light Theme (Default) */
+  --slider-line-normal: var(--gray-250);
+  --slider-background-normal: var(--common-0);
+
+  --table-alternative: var(--gray-50);
+
+  --context-background-normal: var(--common-0);
+  --context-background-alternative: var(--gray-50);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  --primary-normal: var(--orange-500);
+  --primary-neutral: var(--orange-300);
+  --primary-assistive: var(--orange-400);
+  --primary-strong: var(--orange-600);
+  --primary-heavy: var(--orange-700);
+
+  --danger: #f05252;
+  --danger-strong: #c92a2a;
+  --danger-assistive: #56383b;
+
+  /* Background Color System - Dark Theme Override */
+  --background-normal: var(--gray-700);
+  --background-neutral: var(--gray-650);
+  --background-alternative: var(--gray-800);
+  --background-assistive: var(--gray-750);
+
+  --background-default: #170e1d;
+
+  /* Text Color System - Dark Theme Override */
+  --strong: var(--gray-100);
+  --normal: var(--gray-200);
+  --neutral: var(--gray-300);
+  --alternative: var(--gray-400);
+  --assistive: var(--gray-450);
+  --disable: var(--gray-550);
+
+  /* Icon Color System - Dark Theme Override */
+  --icon-normal: var(--gray-250);
+  --icon-neutral: var(--common-0);
+  --icon-disable: var(--gray-300);
+  --icon-assistive: var(--gray-450);
+
+  /* Line Color System - Dark Theme Override */
+  --line-normal: var(--gray-600);
+  --line-neutral: var(--gray-650);
+  --line-alternative: var(--gray-600);
+  --line-assistive: var(--gray-550);
+
+  /* Modal Color System - Dark Theme Override */
+  --modal-line-normal: var(--gray-600);
+  --modal-line-alternative: var(--gray-600);
+  --modal-icon-normal: var(--gray-300);
+  --modal-background-normal: var(--gray-650);
+  --modal-background-alternative: var(--gray-550);
+  --modal-background-assistive: var(--gray-100);
+  --modal-background-neutral: var(--gray-500);
+
+  /* Dropdown Color System - Dark Theme Override */
+  --dropdown-background-normal: var(--gray-650);
+  --dropdown-background-alternative: var(--gray-600);
+
+  /* Interaction Color System - Dark Theme Override */
+  --interaction-background-active: var(--gray-600);
+  --interaction-text-active: var(--gray-100);
+  --interaction-text-inactive: var(--gray-300);
+
+  /* Card Color System - Dark Theme Override */
+  --card-icon-normal: var(--gray-300);
+  --card-assistive: var(--gray-300);
+  --card-text-assistive: var(--gray-300);
+
+  /* Slider Color System - Dark Theme Override */
+  --slider-line-normal: var(--gray-500);
+  --slider-background-normal: var(--gray-650);
+
+  --table-alternative: var(--gray-650);
+
+  --context-background-normal: var(--gray-550);
+  --context-background-alternative: var(--gray-500);
+}

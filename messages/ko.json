@@ -1,0 +1,145 @@
+{
+  "Login": {
+    "title1": "EUM Admin",
+    "title2": "로그인",
+    "title3": "업무를 더 빠르고 정확하게",
+    "title4": "아이디와 비밀번호를 입력해 시작하세요.",
+    "form": {
+      "userId": "아이디를 입력해주세요.",
+      "password": "비밀번호를 입력해주세요.",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "login": "로그인",
+      "loginInProgress": "로그인 중..."
+    },
+    "validation": {
+      "userId": "아이디를 입력해주세요",
+      "password": "비밀번호를 입력해주세요"
+    }
+  },
+  "Error": {
+    "login": {
+      "title": "로그인 오류",
+      "backend": "로그인에 실패했습니다",
+      "system": "시스템 오류가 발생했습니다"
+    },
+    "askAdmin": "관리자에게 문의해주세요"
+  },
+  "MainEntry": {
+    "title": "접속 페이지 선택",
+    "subtitle": "관리자 계정으로 로그인되었습니다. 이동할 페이지를 선택해주세요.",
+    "recent": "최근 접속 대상",
+    "user": {
+      "badge": "User",
+      "title": "사용자 페이지",
+      "description": "EUM Dashboard의 사용자 메뉴 화면으로 이동합니다.",
+      "cta": "사용자 페이지로 이동",
+      "feature1": "실무 메뉴 바로 진입",
+      "feature2": "쿼리 실행부터 시작"
+    },
+    "admin": {
+      "badge": "Admin",
+      "title": "관리자 페이지",
+      "description": "관리자 전용 화면으로 이동합니다.",
+      "cta": "관리자 페이지로 이동",
+      "feature1": "운영 화면 접근",
+      "feature2": "관리자 권한 기능 사용"
+    }
+  },
+  "AdminUsers": {
+    "title": "관리자 페이지",
+    "subtitle": "사용자 목록을 확인하고 신규 사용자를 등록합니다.",
+    "listTitle": "사용자 목록",
+    "total": "전체 {count}명",
+    "refresh": "새로고침",
+    "empty": "등록된 사용자가 없습니다.",
+    "columns": {
+      "alias": "닉네임",
+      "userId": "아이디",
+      "createdAt": "생성일"
+    },
+    "pagination": {
+      "prev": "이전",
+      "next": "다음"
+    },
+    "createTitle": "사용자 추가",
+    "createButton": "사용자 추가",
+    "cancel": "취소",
+    "creating": "추가 중...",
+    "form": {
+      "alias": "닉네임",
+      "userId": "아이디",
+      "password": "비밀번호",
+      "aliasPlaceholder": "2~32자 닉네임",
+      "userIdPlaceholder": "사용자 아이디",
+      "passwordPlaceholder": "8~64자 비밀번호"
+    },
+    "validation": {
+      "alias": "닉네임은 2~32자로 입력해주세요",
+      "userId": "아이디를 입력해주세요",
+      "password": "비밀번호는 8~64자로 입력해주세요"
+    },
+    "toast": {
+      "loadFail": "사용자 목록 조회에 실패했습니다",
+      "createSuccess": "사용자가 추가되었습니다",
+      "createFail": "사용자 추가에 실패했습니다"
+    }
+  },
+  "LoadingScreen": {
+    "loadingMessage": "처리 중입니다..."
+  },
+  "Locale": {
+    "auto": "자동탐지",
+    "en": "English",
+    "ko": "한국어"
+  },
+  "QueryExecution": {
+    "title": "쿼리 실행",
+    "description": "Neo4j Cypher 쿼리를 실행하고 결과를 시각화합니다",
+    "queryHistory": "쿼리 히스토리",
+    "queryModeLabel": "입력 모드",
+    "modeNatural": "자연어",
+    "modeCypher": "Cypher 쿼리",
+    "queryLabel": "Cypher 쿼리",
+    "queryPlaceholder": "Neo4j Cypher 쿼리를 입력하세요...",
+    "queryPlaceholderNatural": "찾고 싶은 내용을 자연어로 입력하세요...",
+    "queryPlaceholderCypher": "Neo4j Cypher 쿼리를 입력하세요...",
+    "execute": "실행",
+    "executing": "실행 중...",
+    "clear": "초기화",
+    "results": "결과",
+    "relationshipCount": "개 관계",
+    "noResults": "결과가 없습니다",
+    "errorExecutingQuery": "쿼리 실행 중 오류가 발생했습니다",
+    "unknownError": "알 수 없는 오류가 발생했습니다",
+    "tabGraph": "그래프",
+    "tabTable": "테이블",
+    "tabRaw": "원본"
+  },
+  "Neo4jGraph": {
+    "expand": "펼치기",
+    "collapse": "접기",
+    "enlarge": "확대",
+    "shrink": "축소",
+    "zoom": "화면에 맞추기",
+    "fullView": "전체 보기 ({count}개 노드)",
+    "close": "닫기",
+    "graphInfo": "그래프 정보",
+    "labels": "레이블",
+    "selectAll": "모두 선택",
+    "deselectAll": "모두 해제",
+    "showOnlyConnected": "연결된 항목만 표시",
+    "selectedNode": "선택된 노드",
+    "relations": "관계",
+    "nodes": "노드",
+    "moreItems": "외 {count}개",
+    "selectedRelation": "선택된 관계",
+    "from": "출발",
+    "to": "도착",
+    "connectedRelations": "연결된 관계",
+    "connectedNodes": "연결된 노드",
+    "relationsLabel": "관계",
+    "graphCollapsed": "{nodeCount}개 노드 · {relCount}개 관계",
+    "previewShowing": "{count}개만 표시",
+    "clickToExpand": "클릭하여 펼치기"
+  }
+}

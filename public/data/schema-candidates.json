@@ -1,0 +1,199 @@
+{
+  "documents": [
+    {
+      "id": "doc-001",
+      "name": "제17차 H9901호선 주간 생산회의 회의록",
+      "date": "2024-04-27",
+      "status": "pending",
+      "source": "sample_meeting_minutes2.txt",
+      "entityCount": 5,
+      "relationCount": 7,
+      "candidates": {
+        "entities": [
+          {
+            "id": "entity-doc-001-01",
+            "type": "Document",
+            "label": "제17차 H9901호선 주간 생산회의 회의록",
+            "description": "2026년 4월 27일에 한화오션 옥포조선소에서 진행된 H9901 호선 주간 생산회의 회의록.",
+            "properties": {
+              "date": "2024-04-27",
+              "organization": "한화오션",
+              "location": "옥포조선소"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-001-02",
+            "type": "Milestone",
+            "label": "주간 생산회의 Milestone 2026-04-27",
+            "description": "2026년 4월 27일에 개최된 주간 생산회의 마일스톤.",
+            "properties": {
+              "date": "2024-04-27",
+              "type": "주간_회의"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-001-03",
+            "type": "Inspection",
+            "label": "RT 검사 2026-04-17~04-27",
+            "description": "2026년 4월 17일부터 27일까지 수행된 방사선 투과(RT) 검사.",
+            "properties": {
+              "startDate": "2024-04-17",
+              "endDate": "2024-04-27",
+              "inspectionType": "RT"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-001-04",
+            "type": "Material",
+            "label": "AH32 후판",
+            "description": "B#30E 조립에 사용되는 AH32 등급 후판.",
+            "properties": {
+              "grade": "AH32",
+              "type": "후판",
+              "usedIn": "Block 30E"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-001-05",
+            "type": "Facility",
+            "label": "옥포조선소 불꽃동 3층 회의실",
+            "description": "한화오션 옥포조선소 내 회의가 진행된 회의실.",
+            "properties": {
+              "location": "옥포조선소",
+              "building": "불꽃동",
+              "floor": "3층"
+            },
+            "status": "pending"
+          }
+        ],
+        "relations": [
+          {
+            "id": "rel-doc-001-01",
+            "type": "SUBMITTED_TO",
+            "source": "제17차 H9901호선 주간 생산회의 회의록",
+            "target": "한화오션",
+            "description": "회의록이 한화오션에 제출됨",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-02",
+            "type": "GATES",
+            "source": "주간 생산회의 Milestone 2026-04-27",
+            "target": "H9901 호선",
+            "description": "마일스톤이 H9901 호선 진행을 게이트함",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-03",
+            "type": "INSPECTS",
+            "source": "RT 검사 2026-04-17~04-27",
+            "target": "Block 10C",
+            "description": "RT 검사가 Block 10C를 검사함",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-04",
+            "type": "USED_IN",
+            "source": "AH32 후판",
+            "target": "Block 30E",
+            "description": "AH32 후판이 Block 30E에 사용됨",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-05",
+            "type": "DELAYS_BLOCK",
+            "source": "ISS-9901-001 자재 입고 지연",
+            "target": "Block 30E",
+            "description": "자재 입고 지연이 Block 30E 작업을 지연시킴",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-06",
+            "type": "DELAYS_BLOCK",
+            "source": "ISS-9901-003 DSC 공장 착수 지연",
+            "target": "Block 40F",
+            "description": "DSC 공장 착수 지연이 Block 40F 작업을 지연시킴",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-001-07",
+            "type": "OCCURRED_AT",
+            "source": "ISS-9901-004 그라인더 날 파손 Near Miss",
+            "target": "옥포조선소 불꽃동 3층 회의실",
+            "description": "사건이 옥포조선소 불꽃동 3층 회의실에서 발생함",
+            "status": "pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "doc-002",
+      "name": "H9901호선 건조이력 요약",
+      "date": "2024-04-20",
+      "status": "pending",
+      "source": "construction_summary.txt",
+      "entityCount": 3,
+      "relationCount": 2,
+      "candidates": {
+        "entities": [
+          {
+            "id": "entity-doc-002-01",
+            "type": "Document",
+            "label": "H9901호선 건조이력 요약문",
+            "description": "H9901호선의 건조 과정에 대한 전반적 요약 문서",
+            "properties": {
+              "project": "H9901",
+              "type": "건조이력"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-002-02",
+            "type": "Inspection",
+            "label": "UT 검사 2024-04-15~20",
+            "description": "2024년 4월 15일부터 20일까지 수행된 초음파 검사",
+            "properties": {
+              "startDate": "2024-04-15",
+              "endDate": "2024-04-20",
+              "inspectionType": "UT"
+            },
+            "status": "pending"
+          },
+          {
+            "id": "entity-doc-002-03",
+            "type": "CriticalEvent",
+            "label": "용접 재작업 이벤트",
+            "description": "B#20A 블록 용접 불합격으로 인한 재작업",
+            "properties": {
+              "block": "B#20A",
+              "type": "용접_재작업"
+            },
+            "status": "pending"
+          }
+        ],
+        "relations": [
+          {
+            "id": "rel-doc-002-01",
+            "type": "SUPPORTS",
+            "source": "UT 검사 2024-04-15~20",
+            "target": "H9901호선",
+            "description": "UT 검사가 H9901 호선 품질을 지원",
+            "status": "pending"
+          },
+          {
+            "id": "rel-doc-002-02",
+            "type": "TRIGGERED_BY",
+            "source": "용접 재작업 이벤트",
+            "target": "UT 검사 2024-04-15~20",
+            "description": "UT 검사 결과로 용접 재작업 발생",
+            "status": "pending"
+          }
+        ]
+      }
+    }
+  ]
+}
