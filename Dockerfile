@@ -16,7 +16,7 @@
 # # CMD ["node", "node_modules/next/dist/bin/next", "start"]
 
 
-FROM node:22-alpine AS base
+FROM node:24.22.1-alpine AS base
 RUN mkdir -p /app
 WORKDIR /app
 
